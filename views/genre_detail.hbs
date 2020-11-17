@@ -1,0 +1,26 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{genre.name}}</h1>
+     {{#if data}}
+ <table class="table table-dark">
+  <thead>
+    <tr>
+      
+      <th scope="col">Book Name</th>
+      <th scope="col">Book Description</th>
+    </tr>
+  </thead>
+  <tbody>
+        {{#each data}}
+    <tr>
+      
+      <td><h5><a class = "text-success" href = {{this.url}}>{{this.title}} </a></h5></td>
+      <td> <p>{{this.summary}}</p></td>
+      
+    </tr>
+     {{/each}}
+      {{else}}
+                <p class = "lead">This Genre has no books!!</p>
+                {{/if}}
+  </div>
+</div>

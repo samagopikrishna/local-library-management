@@ -1,0 +1,38 @@
+<div class='col-sm-10' style = "background-color:#dfe6e3;">
+             <span style = "visibility:hidden;">{{data}}</span> 
+            <h5 ><span class = "text-dark">TITLE: </span> <span class = "text-dark">{{data.title}}</span></h5>
+           <hr/>
+            <p><strong>AUTHOR</strong>: <a  href = {{data.author.url}}>{{data.author.name}}</a></p>
+           
+            <hr/>
+            <p><strong>SUMMARY</strong>: {{data.summary}}</p>
+            <hr/>
+            <p><strong class = "text-dark">ISBN</strong>: {{data.isbn}}</p>
+            <hr/>
+            {{#each data.genre}}
+            <p><strong class = "text-dark">GENRE</strong>: <a href = {{this.url}}>{{this.name}}</a></p>
+            {{/each}}
+              <div style = 'margin-left:20px;margin-top:20px;')
+            <h4><strong>COPIES</strong></h4>
+            {{#each bookInstance}}
+               
+                {{#if this.Available}}
+                   <li><span class="text-success">{{this.status}}</span> <span><strong>IMPRINT</strong> :{{this.imprint}}</span><span><strong>id</strong>: <a href = {{this.url}}>{{this.id}}</a></span>  </li>
+{{else if this.Maintenance}}
+   <li> <span class="text-danger">{{this.status}}</span> <span><strong>due_back</strong>: {{this.due_back_formatted}}</span> <span><strong>IMPRINT</strong> :{{this.imprint}}</span><span><strong>id</strong> : <a href = {{this.url}}>{{this.id}}</a></span></li>
+ 
+{{else if this.Loaned}}
+
+     <li><span class="text-warning">{{this.status}}</span> <span><strong>due_back</strong>: {{this.due_back_formatted}}</span> <span><strong>IMPRINT</strong>:{{this.imprint}}</span><span><strong>id </strong>: <a href = {{this.url}}>{{this.id}}</a></span></li>
+
+
+    
+{{/if}}
+{{else}}
+<p>No Copies Available</p>
+                {{/each}}
+</div>
+            </div>
+        </div>
+    </div>
+</body>

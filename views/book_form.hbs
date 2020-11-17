@@ -1,0 +1,37 @@
+<div class='col-sm-10'>
+             <span style = "visibility:hidden;">{{data}}</span> 
+            <h1 >{{title}}</h1>
+           <form method='POST' action=''>
+               <div class="form-group">
+                   <lable for="title"><b>Title:</b></lable>
+                    <input id='title'class='form-control'  name='title' placeholder="Name of the book" type='text' required='true' style="width:1100px;">
+                    <lable for ='author'><b>Author</b></lable> 
+                 <select name='author' class='form-control' id='author' placeholder='Select author'  required='true'>
+                        {{#each authors}}
+                        
+                            <option value ={{this._id}} >{{this.name}}</option>
+                        {{/each}}
+                    </select>
+                    <lable for ='summary'><b>Summary:</b></lable>
+                    <input id='summary' name='summary' placeholder="Summary" type='text' required='true' style="width:1100px;">  <br>
+                    <lable for='isbn'><b>ISBN:</b></lable>
+                    <input id='isbn' name='isbn' class='form-control' type='text' placeholder="ISBN13">
+                    <lable for="genre"><b>Genre:</b></lable>
+                    <select name='genre' class='form-control' id='genre' placeholder='Select genre'  required='true'>
+                        {{#each genres}}
+                        
+                            <option value ={{this._id}} >{{this.name}}</option>
+                        {{/each}}
+
+                    </select>
+                    <button type = 'submit' class="btn btn-primary">Submit</button>
+               </div>
+           </form>
+            {{#if errors}}
+           {{#each errors}}
+           <li>{{this.msg}}</li>
+           {{/each}}
+           {{/if}}  
+            </div>
+        </div>
+    </div>

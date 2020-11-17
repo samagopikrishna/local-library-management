@@ -1,0 +1,37 @@
+    <div class='col-sm-10'>
+             <span style = "visibility:hidden;">{{data}}</span> 
+            
+           <form method='POST' action=''>
+               <div class="form-group">
+                   <lable for="title"><b>Title:</b></lable>
+                    <input id='title'class='form-control'  name='title' placeholder="Name of the book" type='text' required='true' style="width:1100px;" value = '{{bookDetails1.title}}'>
+                    <lable for ='author'><b>Author</b></lable> 
+                 <select name='author' class='form-control' id='author' placeholder='Select author'  required='true'>
+                        {{#each authorsDetails1}}
+                        
+                            <option value ='{{this._id}}'  {{#if (ifEquality ../bookDetails1.author.name this.name)}}selected{{/if}}>{{this.name}}</option>
+                        {{/each}}
+                    </select>
+                    <lable for ='summary'><b>Summary:</b></lable>
+                    <input id='summary' name='summary' placeholder="Summary" type='text' required='true' style="width:1100px;" value = '{{bookDetails1.summary}}'/>  <br>
+                    <lable for='isbn'><b>ISBN:</b></lable>
+                    <input id='isbn' name='isbn' class='form-control' type='text' placeholder="ISBN13" value ='{{bookDetails1.isbn}}'>
+                    <lable for="genre"><b>Genre:</b></lable>
+                    <select name='genre' class='form-control' id='genre' placeholder='Select genre'  required='true'>
+                        {{#each genresDetails1}}
+                        
+                            <option value ={{this._id}} {{#if (ifEquality ../bookDetails1.genre.0.name this.name)}}selected{{/if}}>{{this.name}}</option>
+                        {{/each}}
+
+                    </select>
+                    <button type = 'submit' class="btn btn-primary">Submit</button>
+               </div>
+           </form>
+            {{#if errors}}
+           {{#each errors}}
+           <li>{{this.msg}}</li>
+           {{/each}}
+           {{/if}}  
+            </div>
+        </div>
+    </div>

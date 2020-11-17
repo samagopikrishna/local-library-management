@@ -1,0 +1,107 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item {{#if (ifEquality title "HomePage")}} active {{/if}} ">
+        <a class="nav-link" href="/catalog">Home</a>
+      </li>
+      <li class="nav-item {{#if (ifEquality title "BookListPage")}} active{{/if}} {{#if (ifEquality title "Book Details Page")}} active{{/if}}  {{#if (ifEquality title "update book")}} active{{/if}}  {{#if (ifEquality title "book Delete")}} active{{/if}}">
+        <a class="nav-link" href="/catalog/books"> Books</a>
+      </li>
+      <li class="nav-item  {{#if (ifEquality title "AuthorList Page")}} active{{/if}}  {{#if (ifEquality title "AuthorDetails Page")}} active{{/if}} {{#if (ifEquality title "Update Author")}} active{{/if}} {{#if (ifEquality title "Delete Author")}} active{{/if}}">
+        <a class="nav-link" href="/catalog/authors"> Authors</a>
+      </li>
+        <li class="nav-item {{#if (ifEquality title "Genre Details")}} active{{/if}}   {{#if (ifEquality title "genre Details Page")}} active{{/if}}   {{#if (ifEquality title "Update Genre")}} active{{/if}}   {{#if (ifEquality title "genre delete")}} active{{/if}}">
+        <a class="nav-link" href="/catalog/genres"> Geners</a>
+      </li>
+      <li class="nav-item {{#if (ifEquality title "bookInstance Page")}} active{{/if}}  {{#if (ifEquality title "bookInstance Details")}} active{{/if}}   {{#if (ifEquality title "Update Book Instance")}} active{{/if}}  {{#if (ifEquality title "bookInstance Delete")}} active{{/if}}  ">
+        <a class="nav-link" href="/catalog/bookinstances"> BOOK-INSTANCES</a>
+      </li>
+      <li class="nav-item {{#if (ifEquality title "Create Author")}} active{{/if}}">
+        <a class="nav-link" href="/catalog/author/create">CREATE NEW AUTHOR</a>
+      </li>
+        <li class="nav-item {{#if (ifEquality title "Create Genre")}} active{{/if}}">
+        <a class="nav-link" href="/catalog/genre/create">CREATE NEW GENRE</a>
+      </li>
+      <li class="nav-item {{#if (ifEquality title "Create Book")}} active{{/if}}">
+        <a class="nav-link" href="/catalog/book/create">CREATE NEW BOOK</a>
+      </li>
+      <li class="nav-item {{#if (ifEquality title "Create BookInstance")}} active{{/if}}">
+        <a class="nav-link" href="/catalog/bookinstance/create">CREATE NEW BOOK INSTANCE</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           

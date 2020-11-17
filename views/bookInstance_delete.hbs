@@ -1,0 +1,18 @@
+<div class='col-sm-10'style = "background-color: #dfe6e3;">
+             
+         <strong>IMPRINT:</strong><h1 class="display-4"><a href = {{bookInstance.url}}>{{bookInstance.imprint}}</a></h1>
+           
+          <strong>STATUS:</b></strong>  <p class = "lead"> {{bookInstance.status}}</p>
+           
+            <p class = "lead text-danger">Do you want to really delete this bookInstance</p>
+            <form method ='POST' action = ''>
+                <div class='form-group'>
+                    <input id = 'bookInstanceid' class='form-control' type = 'hidden' name ='bookInstanceid' required ='true' value ={{bookInstance._id}}>
+                    <button class='btn-primary' type='submit'>Delete</button>
+                </div>
+            </form>
+          
+           
+            </div>
+        </div>
+    </div>

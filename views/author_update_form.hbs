@@ -1,0 +1,24 @@
+    <div class='col-sm-10'>
+             
+            
+           <form method='POST' action=''>
+               <div class="form-group">
+                   <lable for="firstName"><b>FirstName:</b></lable>
+                    <input id='firstname'class='form-control'  name='firstName' placeholder="First Name" type='text' required='true' style="width:1100px;" value = '{{author.first_name}}'>
+                    <lable for ='lastName'><b>LastName</b></lable> 
+                    <input id='lastName'class='form-control'  name='lastName' placeholder="Last Name" type='text' required='true' style="width:1100px;" value = '{{author.family_name}}'>
+                    <lable for ='birthDate'><b>Date of Birth:</b></lable>
+                    <input id='birthDate' name='birthDate' placeholder="birthDate" type='text' required='true' style="width:1100px;" value = '{{author.date_of_birth}}'/>  <br>
+                    <lable for='dateOfDeath'><b>Date of Death:</b></lable>
+                    <input id='dateOfDeath' name='dateOfDeath' class='form-control' type='text' placeholder="Date Of Death" value ='{{author.date_of_death}}'>
+                    <button type = 'submit' class="btn btn-primary btn-lg ">Submit</button>
+               </div>
+           </form>
+            {{#if errors}}
+           {{#each errors}}
+           <li>{{this.msg}}</li>
+           {{/each}}
+           {{/if}}  
+            </div>
+        </div>
+    </div>

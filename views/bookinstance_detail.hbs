@@ -1,0 +1,19 @@
+<div style = "background-color: #dfe6e3">
+  <div class="container">
+    <h1 class="display-4">ID: {{instanceDetails._id}}</h1>
+   <strong>TITLE</strong> :  <p class="lead"><a href = {{instanceDetails.book.url}}>{{instanceDetails.book.title}}</a></p>
+    <strong>IMPRINT</strong>:    <p class = "lead"> {{instanceDetails.imprint}}</p>
+     {{#if instanceDetails.Available}}
+           <strong>STATUS:</strong>  <p class="text-success">{{instanceDetails.status}}</p>
+            {{else if instanceDetails.Maintenance}}
+           <strong>STATUS:</strong>   <span class="text-danger"> {{instanceDetails.status}}<br><span class = "lead">DUE : {{instanceDetails.due_back_formatted}}</span></span>
+              {{else if instanceDetails.Loaned}}
+            <strong>STATUS:</strong>  <span class="text-warning"> {{instanceDetails.status}}<br><span class = "lead">DUE : {{instanceDetails.due_back_formatted}}</span></span>
+             {{else}}
+             <p class = "lead">Book Copy not available</p>
+            
+
+
+            {{/if}}
+  </div>
+</div>

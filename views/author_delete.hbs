@@ -1,0 +1,38 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Author :{{author.name}}</h1>
+
+    {{#if author_books.length}}
+              <p class="lead text-danger">Delete the following books before attempting to delete this author.</p>
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Book Name</th>
+                    <th scope="col">Book Description</th>
+                </tr>
+            </thead>
+                <tbody>
+        {{#each author_books}}
+    <tr>
+      
+      <td><h5><a class = "text-success" href = {{this.url}}>{{this.title}} </a></h5></td>
+      <td> <p>{{this.summary}}</p></td>
+      
+    </tr>
+         
+                {{/each}}
+      
+  </tbody>
+</table>
+            {{else}}
+            <p class = "lead">Do you want to really delete this author</p>
+            <form method ='POST' action = ''>
+                <div class='form-group'>
+                    <input id = 'authorid' class='form-control' type = 'hidden' name ='authorid' required ='true' value ={{author._id}}>
+                    <button class='btn-primary' type='submit'>Delete</button>
+                </div>
+            </form>
+            {{/if}}
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class='col-sm-10'> 
+            <h1 >TITLE: {{title}}</h1>
+   
+            <form method="POST" action=''>
+                <div class ='form-group'>
+                    <label for='book'><b>Book:</b></label>
+                    <select name='book' class='form-control' id='book' placeholder='Select book'  required='true'>
+                        {{#each book_list}}
+                        
+                            <option >{{this.title}}</option>
+                        {{/each}}
+                    </select>
+                    <lable for ='imprint'><b>imprint:</b></lable>
+                        <input id='imprint' class='form-control' type='text' placeholder='Publisher and date information' name='imprint' required='true' > 
+                        <lable for ='due_back'><b>Date when book available:</b></lable>
+                        <input id ='due_back' class='form-control' type='date' name='due_back'>
+                        <lable for='status'><b>Status</b></lable>
+                        <select name='status' class='form-control' id='status' placeholder='Select status'  required='true'>
+                        <option value ='Maintenance'>Maintenance</option>
+                        <option value ='Available'>Available</option>
+                        <option value ='Loaned'>Loaned</option>
+                         <option value ='Reserved'>Reserved</option>
+
+                        </select>
+
+                        <button type = 'submit' class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+             {{#if errors}}
+           {{#each errors}}
+           <li>{{this.msg}}</li>
+           {{/each}}
+           {{/if}}
+            </div>
+        </div>
+    </div>

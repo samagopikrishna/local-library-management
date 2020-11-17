@@ -1,0 +1,28 @@
+<div class="jumbotron">
+  <h1 class="display-4">Below are the List of Entire Books</h1>
+  <p class="lead">You can view update and delete the book data!!!.</p>
+  <hr class="my-4">
+        <table class="table table-dark">
+  <thead>
+    <tr>
+      
+      <th scope="col">Book Name</th>
+      <th scope="col">Update Book</th>
+      <th scope="col">Delete Book</th>
+    </tr>
+  </thead>
+  <tbody>
+        {{#each data}}
+    <tr>
+      
+      <td><h5><a class = "text-success" href = {{this.url}}>{{this.title}}</a></h5></td>
+      <td><a class = "text-wrap btn btn-success" href = {{this.updateUrl}}>UpdateBook</a></td>
+      <td><a  class = " btn btn-danger" href ={{this.fullUrl}}>Delete Book</a></td>
+    </tr>
+    <tr>
+       {{/each}}
+  </tbody>
+</table>
+</div>
+
+

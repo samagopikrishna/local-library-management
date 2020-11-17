@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <h1 class="display-4">{{book.title}}</h1>
+  <p class="lead">{{book.summary}}</p>
+  <hr class="my-4">
+     
+         {{#if book_instance.length}}
+            <h3 class = "text-danger">Delete the following book instances before attempting to delete this book.</h3>    
+            <h4 class = "text-info">Book Instances</h4>
+            {{#each book_instance}}
+           <a class = "text-success font-italic font-weight-bolder" href = {{this.url}}>{{this.imprint}}</a>
+            <p class="font-italic font-weight-bolder">{{this.status}}</p>
+            <p class="font-italic font-weight-bolder">{{this.due_back}}</p>
+            <hr>
+            {{/each}}
+              {{else}}
+            <p class = "text-danger">Do you want to really delete this book</p>
+            <form method ='POST' action = ''>
+                <div class='form-group'>
+                    <input id = 'bookid' class='form-control' type = 'hidden' name ='bookid' required ='true' value ={{book._id}}>
+                    <button class='btn-primary' type='submit'>Delete</button>
+                </div>
+            </form>
+            {{/if}}
+</div>

@@ -1,0 +1,20 @@
+    <div class='col-sm-10'>
+           
+            
+           <form method='POST' action=''>
+               <div class="form-group">
+                  
+                    <lable for ='genre'><b>Genres</b></lable> 
+                       <input id='genre'class='form-control'  name='genre' placeholder="Name of the book" type='text' required='true' style="width:1100px;" value = '{{genreDetails.name}}''>
+              
+                    <button type = 'submit' class="btn btn-primary">Submit</button>
+               </div>
+           </form>
+            {{#if errors}}
+           {{#each errors}}
+           <li>{{this.msg}}</li>
+           {{/each}}
+           {{/if}}  
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,33 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Genre :{{genre.name}}</h1>
+    <p class = "lead text-danger" >Delete the following books  before attempting to delete this Genre.</p>
+     {{#if books.length}}
+ <table class="table table-dark">
+  <thead>
+    <tr>
+      
+      <th scope="col">Book Name</th>
+      <th scope="col">Book Description</th>
+    </tr>
+  </thead>
+  <tbody>
+        {{#each books}}
+    <tr>
+      
+      <td><h5><a class = "text-success" href = {{this.url}}>{{this.title}} </a></h5></td>
+      <td> <p>{{this.summary}}</p></td>
+      
+    </tr>
+     {{/each}}
+            {{else}}
+            <p class = "lead">Do you want to really delete this Genre</p>
+            <form method ='POST' action = ''>
+                <div class='form-group'>
+                    <input id = 'genreid' class='form-control' type = 'hidden' name ='genreid' required ='true' value ={{genre._id}}>
+                    <button class='btn-primary' type='submit'>Delete</button>
+                </div>
+            </form>
+            {{/if}}
+  </div>
+</div>
